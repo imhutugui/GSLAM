@@ -465,9 +465,9 @@ public:
     Matrix<Scalar, Rows, Cols> abs() const
     {
         Matrix<Scalar, Rows, Cols> r;
-        for (size_t i=0; i<Rows; i++) {
-            for (size_t j=0; j<Cols; j++) {
-                r(i,j) = Scalar(fabs((*this)(i,j)));
+        for (size_t i = 0; i < Rows; i++) {
+            for (size_t j = 0; j < Cols; j++) {
+                r(i, j) = Scalar(fabs((*this)(i, j)));
             }
         }
         return r;

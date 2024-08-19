@@ -24,6 +24,7 @@
 #define QGLVIEWER_CAMERA_H
 
 #include "keyFrameInterpolator.h"
+#include <QMap>
 class QGLViewer;
 
 namespace qglviewer {

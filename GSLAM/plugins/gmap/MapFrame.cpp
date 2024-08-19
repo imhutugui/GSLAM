@@ -179,6 +179,7 @@ bool   MapFrame::getBoWVector(GSLAM::BowVector &bowvec) const
 //    if(_descriptors.empty()) return false;
 //    voc.transform(_descriptors,_bowvec,_featvec,voc.getDepthLevels()-3);
 //    bowvec=_bowvec;return true;
+    return false;
 }
 
 bool   MapFrame::getFeatureVector(GSLAM::FeatureVector &featvec) const
@@ -206,6 +207,7 @@ bool   MapFrame::getFeatureVector(GSLAM::FeatureVector &featvec) const
 //    if(_descriptors.empty()) return false;
 //    voc.transform(_descriptors,_bowvec,_featvec,voc.getDepthLevels()-3);
 //    featvec=_featvec;return true;
+    return false;
 }
 
 bool   MapFrame::setKeyPoints(const std::vector<GSLAM::KeyPoint>& kpts,

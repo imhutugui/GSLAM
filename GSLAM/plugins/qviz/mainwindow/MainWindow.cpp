@@ -10,7 +10,7 @@
 #include <regex>
 
 #include "MainWindow.h"
-#include "filesystem.hpp"
+#include "GSLAM/core/filesystem.hpp"
 
 using namespace std;
 using namespace ghc::filesystem;

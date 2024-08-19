@@ -3,7 +3,8 @@
 #include <sstream>
 #include <regex>
 #include <signal.h>
-#include "filesystem.hpp"
+#include "GSLAM/core/filesystem.hpp"
+#include "backward.hpp"
 
 using namespace std;
 using namespace GSLAM;

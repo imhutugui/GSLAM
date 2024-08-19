@@ -202,7 +202,7 @@ void Win3D::slotNode(Svar msg)
         nodevis["__name__"]="NodeGL Visualizer";
         nodevis["__menu__"]["Delete"]=SvarFunction([this](){
             this->nodevis=Svar();
-            updateGL();
+            update();
         });
         fitView=true;
     }
@@ -212,7 +212,7 @@ void Win3D::slotNode(Svar msg)
         if(nodevis.exist(node->name)){
             nodevis.erase(node->name);
             messenger.publish("qviz/display",nodevis);
-            updateGL();
+            update();
         }
         return;
     }
@@ -230,19 +230,19 @@ void Win3D::slotNode(Svar msg)
         config.arg<bool>("visible",ptr->visible,"Visiable or not");
         config["__cbk__point_size"]=SvarFunction([ptr,this](double pointSize){
             ptr->pointSize=pointSize;
-            updateGL();
+            update();
         });
         config["__cbk__line_width"]=SvarFunction([ptr,this](double line_width){
             ptr->lineWidth=line_width;
-            updateGL();
+            update();
         });
         config["__cbk__default_color"]=SvarFunction([ptr,this](Point3ub default_color){
             ptr->defColor=default_color;
-            updateGL();
+            update();
         });
         config["__cbk__visible"]=SvarFunction([ptr,this](bool visible){
             ptr->visible=visible;
-            updateGL();
+            update();
         });
         config["__name__"]=ptr->_name;
 
@@ -293,7 +293,7 @@ void Win3D::updateScenseCenterRadius()
     }
     setGLCenter((minV+maxV)*0.5);
     setScenceRadius((maxV-minV).norm()/2);
-    updateGL();
+    update();
 }
 
 void Win3D::draw()

@@ -34,6 +34,7 @@
 #define GSLAM_REGISTRY_H
 #include "SharedLibrary.h"
 #include "Svar.h"
+#include <filesystem>
 
 namespace GSLAM {
 
@@ -146,7 +147,11 @@ public:
 protected:
     static bool fileExists(const std::string& filename)
     {
-        return access( filename.c_str(), 0 ) == 0;
+        //return access( filename.c_str(), 0) == 0;
+        namespace fs = std::filesystem;
+        std::error_code ec;
+        fs::path p(filename.c_str());
+        return fs::exists(p, ec);
     }
 
     static void convertStringPathIntoFilePathList(const std::string& paths,FilePathList& filepath)

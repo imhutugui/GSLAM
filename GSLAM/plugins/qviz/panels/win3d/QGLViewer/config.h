@@ -75,12 +75,13 @@ Error : libQGLViewer requires a minimum Qt version of 4.0
 #endif
 
 // OpenGL includes - Included here and hence shared by all the files that need OpenGL headers.
-# include <QGLWidget>
+//# include <QGLWidget>
 
 // GLU was removed from Qt in version 4.8
 #ifdef Q_OS_MAC
 # include <OpenGL/glu.h>
 #else
+#include <windows.h>
 # include <GL/glu.h>
 #endif
 

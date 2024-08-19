@@ -28,6 +28,7 @@
 #include <QMap>
 #include <QClipboard>
 #include <QTime>
+#include <QGLWidget>
 
 class QTabWidget;
 

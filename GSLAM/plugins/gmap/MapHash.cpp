@@ -662,6 +662,7 @@ bool MapHash::saveMap2DFusion(std::string foler2save)const
 //#endif
 //    }
 //    return true;
+    return false;
 }
 
 bool MapHash::saveTrajectory(std::string file2save)const

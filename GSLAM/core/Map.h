@@ -75,6 +75,8 @@ typedef std::mutex MutexRW;
 typedef std::unique_lock<std::mutex> ReadMutex;
 typedef ReadMutex WriteMutex;
 
+
+
 enum ImageChannelFlags{
     IMAGE_UNDEFINED     =0,
     // For colorful or depth camera
@@ -505,7 +507,7 @@ inline std::string MapFrame::channelTypeString(const int channels)
     }
     else
     {
-        for(uint i=0; i<sizeof(channels)*8;i++)
+        for(auto i=0; i<sizeof(channels)*8;i++)
         {
             int j = channels & (0x00000001<<i);
             if(j !=0)
